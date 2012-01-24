@@ -226,20 +226,21 @@ fs = {
 -- Progressbar properties
 for _, w in pairs(fs) do
   w:set_vertical(true):set_ticks(true)
-  w:set_height(16):set_width(5):set_ticks_size(2)
+  w:set_height(16):set_width(10):set_ticks_size(2)
   w:set_border_color(beautiful.border_widget)
   w:set_background_color(beautiful.fg_off_widget)
   w:set_gradient_colors({ beautiful.fg_widget,
      beautiful.fg_center_widget, beautiful.fg_end_widget
   }) -- Register buttons
   w.widget:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () exec("dolphin", false) end)
+    awful.button({ }, 1, function () exec("pcmanfm", false) end)
   ))
 end -- Enable caching
 vicious.cache(vicious.widgets.fs)
 -- Register widgets
-vicious.register(fs.r, vicious.widgets.fs, "${/ used_p}",            599)
-vicious.register(fs.s, vicious.widgets.fs, "${/media/files used_p}", 599)
+vicious.register(fs.r, vicious.widgets.fs, "${/ used_p}",             599)
+vicious.register(fs.s, vicious.widgets.fs, "${/home used_p}",         599)
+
 -- }}}
 
 -- {{{ Network usage
